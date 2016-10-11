@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ED_02_Recursividade;
+
+import java.util.Scanner;
 
 /**
  *
@@ -11,12 +8,21 @@ package ED_02_Recursividade;
  */
 public class Exer_02 {
     public static void main(String[] args) {
-        double numharm, n;
+        Scanner ler = new Scanner(System.in);
         
-        double numharm (in n){
-        if (n == 1)
-        return 1;
-        
+        System.out.println("\nDigite o número da Base: ");
+        int num = ler.nextInt();
+
+        System.out.println("Harmônico (Hn) de " + num + " é: " + Harmonicos(num));
+
     }
+
+    public static double Harmonicos(int n) {
+
+        if (n <= 1) {
+            return 1;
+        } else {
+            return 1.0 / n + Harmonicos(n - 1);
+        }
     }
 }
